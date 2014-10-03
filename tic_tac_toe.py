@@ -52,9 +52,21 @@ def get_computer_move(board, computer_token):
 def is_space_free(board, number):
     """Returns the boolean True or False. If True the space corresponding to
     the input number does not have an 'x' or a 'o'."""
+    
+    # make sure number is an integer between 0 and 8. apparently doing it this
+    # way makes python developers angry but w/e
+    if not isinstance(number, int):
+        return False
+    
+    elif number < 0 or number > 8:
+        return False
+        
+    # check list "board" at index "number"
+    elif board[number] == None:
+        return True 
+    else:
+        return False 
 
-    # If the player tries to place their 'x' or 'o' on an already occupied,
-    # then the player should be asked to choose one of the free spots.
 
 
 def is_there_a_win(board):
