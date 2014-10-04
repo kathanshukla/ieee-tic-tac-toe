@@ -51,17 +51,16 @@ def get_computer_move(board, computer_token):
 
 def is_space_free(board, number):
     """Returns the boolean True or False. If True the space corresponding to
-    the input number does not have an 'x' or a 'o'."""
+    the input number does not have an 'x' or a 'o'. Returns a message for
+    invalid input."""
     
-    # make sure number is an integer between 0 and 8. apparently doing it this
-    # way makes python developers angry but w/e
-    if not isinstance(number, int):
-        return False
+    # make sure number is an integer between 0 and 8. apparently using 
+    # isinstance() makes python developers angry but whatever
     
-    elif number < 0 or number > 8:
-        return False
-        
-    # check list "board" at index "number"
+    if not isinstance(number, int) or number < 0 or number > 8:
+        return 'Please enter an integer between 1 and 9.\n'        
+        # get_player_move will print this if input is invalid
+
     elif board[number] == None:
         return True 
     else:
