@@ -165,6 +165,7 @@ def run_all_tests():
     for test in tests:
         try:
             test()
+            print('The {} passed.'.format(test.func_name))
         except AssertionError:
             print('The {} failed.'.format(test.func_name))
 
