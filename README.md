@@ -100,7 +100,7 @@ $ git commit tic_tac_toe.py -m "Implemented the XXXXX function, test passes."
 ```
 
 Now that you've committed the changes to your branch on your computer you can
-send them up to Github so that we can get the change merged into the main
+send them up to Github so that we can get the change merge into the main
 repository:
 
 ```bash
